@@ -3,7 +3,7 @@ import axios from 'axios';
 // import { nanoid } from 'nanoid';
 
 const instance = axios.create({
-  baseURL: 'https://63ee9f6d5e9f1583bdc58f87.mockapi.io',
+  baseURL: 'https://63ee9f6d5e9f1583bdc58f87.mockapi.io/contacts',
 });
 
 // axios.defaults.baseURL = 'https://63ee9f6d5e9f1583bdc58f87.mockapi.io/';
