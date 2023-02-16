@@ -2,8 +2,8 @@ import React from 'react';
 import { nanoid } from 'nanoid';
 import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'components/redux/contactsSlice';
-import { getContacts } from 'components/redux/selectors';
+import { addContact } from 'components/redux/operations';
+import { selectContacts } from 'components/redux/selectors';
 
 import { Notification, patternName } from 'components/utiles';
 
@@ -21,7 +21,7 @@ const numberId = nanoid();
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const allContacts = useSelector(getContacts);
+  const allContacts = useSelector(selectContacts);
 
   const formSubmitHandler = ({ name, number }, { resetForm }) => {
     const invalidName = allContacts.find(state => state.name === name);

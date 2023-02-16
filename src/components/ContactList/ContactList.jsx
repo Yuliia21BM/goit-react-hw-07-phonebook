@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getTextFilter, getContacts } from '../redux/selectors';
-import { deleteContact } from 'components/redux/contactsSlice';
+import { selectTextFilter, selectContacts } from '../redux/selectors';
+import { deleteContact } from 'components/redux/operations';
 
 import { ContactsList, ContactItem, DeleteBtn } from './ContactList.styled';
 
@@ -15,8 +15,8 @@ const getFilteredContacts = (contacts, filterValue) => {
 
 export const ContactList = () => {
   const dispatch = useDispatch();
-  const allContacts = useSelector(getContacts);
-  const filterValue = useSelector(getTextFilter);
+  const allContacts = useSelector(selectContacts);
+  const filterValue = useSelector(selectTextFilter);
 
   const visibleContacts = getFilteredContacts(allContacts, filterValue);
 
